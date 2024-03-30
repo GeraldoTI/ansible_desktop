@@ -1,0 +1,129 @@
+---
+- name: Instalação de Softwares no Ubuntu 22.04
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Atualizar lista de pacotes
+      apt:
+        update_cache: yes
+
+    - name: Instalar navegadores
+      apt:
+        name: 
+          - google-chrome-stable
+          - firefox
+          - microsoft-edge-dev
+      become: yes
+
+    - name: Instalar virtualizadores
+      apt:
+        name: 
+          - virtualbox
+          - qemu-kvm
+          - libvirt-daemon-system
+          - libvirt-clients
+          - bridge-utils
+          - virtinst
+          - virt-manager
+      become: yes
+
+    - name: Instalar Docker
+      apt:
+        name:
+          - docker.io
+          - docker-compose
+      become: yes
+
+    - name: Instalar sistemas de monitoramento Docker
+      apt:
+        name:
+          - ctop
+          - cadvisor
+      become: yes
+
+    - name: Instalar Cockpit
+      apt:
+        name: cockpit
+      become: yes
+
+    - name: Instalar Ferramentas de Captura de Tela
+      apt:
+        name:
+          - shutter
+          - flameshot
+      become: yes
+
+    - name: Instalar Ferramentas de Desenvolvimento
+      apt:
+        name:
+          - git
+          - curl
+          - wget
+          - build-essential
+          - cmake
+          - python3
+          - python3-pip
+          - openjdk-11-jdk
+          - nodejs
+          - npm
+          - ansible
+          - vim
+          - htop
+          - jq
+          - tmux
+      become: yes
+
+    - name: Instalar Ferramentas de Produtividade
+      apt:
+        name:
+          - libreoffice
+          - gimp
+          - inkscape
+          - vlc
+          - audacity
+          - shotwell
+          - evolution
+      become: yes
+
+    - name: Instalar Ferramentas de Rede
+      apt:
+        name:
+          - nmap
+          - tcpdump
+          - wireshark
+          - net-tools
+          - iperf3
+          - traceroute
+          - iftop
+          - ipcalc
+      become: yes
+
+    - name: Instalar Ferramentas de Segurança
+      apt:
+        name:
+          - clamav
+          - rkhunter
+          - iptables
+          - fail2ban
+          - openssl
+          - gnupg
+      become: yes
+
+    - name: Instalar Ferramentas de Sistema
+      apt:
+        name:
+          - gnome-system-monitor
+          - gparted
+          - bleachbit
+          - synaptic
+          - gdebi
+          - p7zip-full
+      become: yes
+
+    - name: Instalar Terminais Linux
+      apt:
+        name:
+          - terminator
+          - guake
+          - tilix
+      become: yes
